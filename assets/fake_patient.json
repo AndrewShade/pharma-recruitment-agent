@@ -1,0 +1,43 @@
+{
+  "patient_id": "SJ-2026-05-MEL",
+  "clinical_summary": {
+    "demographics": {
+      "age": 54,
+      "biological_sex": "Female",
+      "reproductive_status": "Post-menopausal"
+    },
+    "diagnosis": {
+      "condition": "Stage IV Metastatic Melanoma",
+      "original_presentation": "Primary cutaneous lesion on left shoulder, Breslow 4.2mm",
+      "surgical_history": "Wide local excision and sentinel lymph node biopsy completed three years ago",
+      "metastatic_involvement": [
+        "Lungs",
+        "Subcutaneous sites"
+      ]
+    },
+    "current_status": {
+      "new_findings": "Two nodules on upper back, 2 centimeters each",
+      "complications": "One lesion shows signs of slight ulceration",
+      "current_medication": "Nivolumab (PD-1 inhibitor) for six months",
+      "treatment_response": "Radiographic progression in subcutaneous nodules",
+      "ECOG_performance_score": 1
+    },
+    "comorbidities": [
+      {
+        "condition": "Hypertension",
+        "management": "Lisinopril"
+      },
+      {
+        "condition": "Psoriasis",
+        "severity": "Mild plaque",
+        "recent_history": "No systemic immunosuppressants in the last 24 months"
+      }
+    ],
+    "laboratory_assessment": {
+      "organ_function": "Normal",
+      "marrow_function": "Normal",
+      "white_blood_cell_count": "Standard range",
+      "platelet_count": "Standard range"
+    }
+  }
+}
