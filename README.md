@@ -4,6 +4,8 @@ This project is a clinical trial matching system designed to screen unstructured
 
 The system is built to run entirely on local hardware. This ensures that sensitive patient information remains private and never leaves the local infrastructure.
 
+![Main Dashboard Screenshot](assets/dashboard_main.png)
+
 ## Architecture
 
 The core of this application is a two stage agentic pipeline. This design prevents the common issue of large language models hallucinating facts to fit a specific data format.
