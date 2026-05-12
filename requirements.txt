@@ -1,8 +1,11 @@
 langchain
-langchain_huggingface
-langchain_ollama
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-ollama
 
-sentence_transformers
+sentence-transformers
+torch
 chromadb
 streamlit
 pydantic
