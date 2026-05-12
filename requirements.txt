@@ -1,0 +1,11 @@
+langchain
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-ollama
+
+sentence-transformers
+torch
+chromadb
+streamlit
+pydantic

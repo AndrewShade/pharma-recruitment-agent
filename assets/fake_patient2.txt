@@ -1,0 +1,24 @@
+Clinical Intake Note
+Patient: Sarah J.
+
+Age: 54
+
+History of Present Illness: Patient presents for follow-up regarding Stage IV metastatic melanoma. Originally diagnosed with a primary cutaneous lesion on the left shoulder three years ago (Breslow 4.2mm). Underwent wide local excision and sentinel lymph node biopsy at that time.
+
+Last year, imaging confirmed metastasis to the lungs and several subcutaneous sites. She has been on a PD-1 inhibitor (Nivolumab) for six months, but the most recent CT scan shows slight progression in the subcutaneous nodules. She now has two distinct lesions on her upper back, each roughly 2 centimeters in diameter. One of the lesions appears slightly ulcerated.
+
+Past Medical History:
+
+Hypertension (managed with Lisinopril).
+
+History of mild plaque psoriasis (no systemic immunosuppressants required in the last two years).
+
+Appendectomy at age 12.
+
+Current Status:
+
+ECOG Performance Status: 1 (active, but tires easily).
+
+Pregnancy Status: Post-menopausal.
+
+Labs: Normal organ and marrow function; WBC and Platelets within standard range.
