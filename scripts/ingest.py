@@ -6,18 +6,21 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 
 # Configuration
-JSON_PATH = os.path.join("assets", "ctg-studies.json")
-DB_DIR = "./clinical_trial_index"
+_SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+_ROOT_DIR = os.path.dirname(_SCRIPTS_DIR)
+JSON_PATH = os.path.join(_ROOT_DIR, "assets", "ctg-studies.json")
+DB_DIR = os.path.join(_ROOT_DIR, "clinical_trial_index")
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
-def clean_criteria_text(text):
+def clean_criteria_text(text: str) -> list[str]:
     """Splits eligibility criteria into individual bullet points."""
     text = re.sub(r'(Inclusion|Exclusion) Criteria:', '', text, flags=re.IGNORECASE)
     lines = re.split(r'\n\s*[-*•]\s*|\n\s*\d+\.\s*', text)
     cleaned = [line.strip() for line in lines if len(line.strip()) > 10]
     return cleaned
 
-def run_ingestion():
+def run_ingestion() -> None:
+    """Parses trial JSON, chunks eligibility criteria, and writes the ChromaDB vector index."""
     print(f"Starting ingestion from {JSON_PATH}...")
     
     if not os.path.exists(JSON_PATH):
