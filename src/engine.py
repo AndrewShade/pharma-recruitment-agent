@@ -1,4 +1,3 @@
-import json
 from typing import List, Literal
 from pydantic import BaseModel, Field
 from langchain_ollama import OllamaLLM, ChatOllama
@@ -9,13 +8,14 @@ class TrialEvaluation(BaseModel):
     """The result of evaluating a patient against a clinical trial."""
     nct_id: str = Field(description="The unique identifier for the clinical trial")
     verdict: Literal["MATCH", "MISMATCH", "POTENTIAL"] = Field(description="The final decision")
-    match_confidence: int = Field(description="Score from 1 to 10 on certainty")
+    match_confidence: int = Field(ge=1, le=100, description="Confidence score from 1 to 100")
     reasoning: List[str] = Field(description="Step by step logical confirmation points")
     data_gaps: List[str] = Field(description="Missing secondary info like minor labs")
     follow_up_questions: List[str] = Field(description="Critical showstoppers only")
 
 class ClinicalEngine:
-    def __init__(self, model_name="mistral-nemo"):
+    def __init__(self, model_name: str = "mistral-nemo") -> None:
+        """Initialises the two-stage inference pipeline against a local Ollama model."""
         # The Worker (Logic)
         self.worker_llm = OllamaLLM(
             model=model_name, 
@@ -52,7 +52,8 @@ class ClinicalEngine:
             ANALYSIS: {analysis}
         """)
 
-    def evaluate(self, nct_id, patient_text, trial_rule):
+    def evaluate(self, nct_id: str, patient_text: str, trial_rule: str) -> TrialEvaluation:
+        """Runs two-stage reasoning and structured extraction for one trial against one patient."""
         # Stage 1: Raw Reasoning
         reasoning_chain = self.thinking_prompt | self.worker_llm
         raw_analysis = reasoning_chain.invoke({
